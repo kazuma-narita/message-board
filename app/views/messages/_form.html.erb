@@ -2,29 +2,30 @@
   <% if @message.errors.present? %>
     <div class="alert alert-danger">
       <%= alert %>
-        <ul>
-          <% @message.errors.full_messages.each do |full_message| %>
-        <li>
-          <%= full_message %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-  <div class="form-group">
-   <%= f.label :name, "名前:", :class => "control-label col-md-2" %>
-    <div class="col-md-8">
-      <%= f.text_field :name, :class => "form-control" %>
+      <ul>
+        <% @message.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %>
+      </ul>
     </div>
-  </div>
+  <% end %>
+
+
+    <div class="form-group">
+     <%= f.label :name, "名前:", :class => "control-label col-md-2" %>
+      <span class="col-md-8">
+        <%= f.text_field :name, {:class => "form-control"} %>
+      </span>
+    </div>
   
     <div class="form-group">
-   <%= f.label :age, "年齢:", :class => "control-label col-md-2" %>
-    <div class="col-md-8">
-      <%= f.text_field :age, :class => "form-control", type: "number" %>
+      <%= f.label :age, "年齢:", :class => "control-label col-md-2" %>
+        <div class="col-md-8">
+          <%= f.text_field :age, :class => "form-control", type: "number" %>
+        </div>
     </div>
-  </div>
   
   <div class="form-group">
    <%= f.label :body, "内容:", :class => "control-label col-md-2" %>
